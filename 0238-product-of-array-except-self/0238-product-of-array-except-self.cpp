@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         // Time complexity: O(n)
-        vector<int> result;
+        vector<int> result(nums.size());
         vector<int> prefix(nums.size(), 1);
         vector<int> suffix(nums.size(), 1);
 
@@ -18,7 +18,7 @@ public:
 
         // O(n)
         for (int i = 0; i < nums.size(); ++i) {
-            result.push_back(prefix[i] * suffix[i]);
+            result[i] = prefix[i] * suffix[i];
         }
 
         return result;
